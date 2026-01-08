@@ -40,17 +40,30 @@ execflow-ai/
 ├── app/
 │   ├── main.py              # FastAPI app entry point
 │   ├── api/                 # API routes
+│   │   └── routes.py
 │   ├── core/                # Configuration
+│   │   └── config.py
 │   ├── db/                  # Database connection
+│   │   └── database.py
 │   ├── models/              # Database models
 │   │   ├── meeting.py
 │   │   ├── task.py
 │   │   └── reminder.py
-│   ├── services/            # Business & AI logic (WIP)
+│   ├── services/            # Business & AI logic
+│   │   ├── ai_task_extractor.py
+│   │   ├── plan_builder.py
+│   │   ├── reminder_service.py
+│   │   └── transcript_processor.py
 │   └── utils/               # Helper utilities
+│       └── helpers.py
 │
-├── execflow.db              # SQLite database (local)
+├── prompts/                 # LLM System Prompts
+│   └── task_extraction_prompt.txt
+├── tests/                   # Test Suite
+│   └── test_task_extraction.py
+├── test.db                  # SQLite database (local)
 ├── create_tables.py         # DB table creation script
+├── database_schema.md       # Database Documentation
 ├── requirements.txt
 ├── README.md
 └── .gitignore
