@@ -15,4 +15,10 @@ SessionLocal = sessionmaker(autocommit = False,
 Base = declarative_base()
 
 
-
+def get_db():
+    """Database session dependency for FastAPI"""
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
